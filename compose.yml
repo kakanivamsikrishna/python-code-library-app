@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: vamsikrishnakakani/library-app:db
+    image: vamsikrishnakakani/test-library:dbimage
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: vamsikrishnakakani/library-app:authentication
+    image: vamsikrishnakakani/test-library:authimage
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: vamsikrishnakakani/library-app:books
+    image: vamsikrishnakakani/test-library:bookimage
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: vamsikrishnakakani/library-app:borrow
+    image: vamsikrishnakakani/test-library:borrowimage
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: vamsikrishnakakani/library-app:frontend
+    image: vamsikrishnakakani/test-library:frontend
     deploy:
       replicas: 1
     ports:
