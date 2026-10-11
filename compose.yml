@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: vamsikrishnakakani/test-library:dbimage
+    image: vamsikrishnakakani/dussera:dbimage
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: vamsikrishnakakani/test-library:authimage
+    image: vamsikrishnakakani/dussera:authimage
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: vamsikrishnakakani/test-library:bookimage
+    image: vamsikrishnakakani/dussera:bookimage
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: vamsikrishnakakani/test-library:borrowimage
+    image: vamsikrishnakakani/dussera:borrowimage
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: vamsikrishnakakani/test-library:frontend
+    image: vamsikrishnakakani/dussera:frontendimage
     deploy:
       replicas: 1
     ports:
